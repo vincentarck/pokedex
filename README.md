@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Pokedex
 Assesment for [Nusameta](https://nusameta.io/).
 
