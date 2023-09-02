@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url("/assets/bg.png");
+  background-repeat: repeat-y;
+  z-index: -1;
+  position: relative;
+  overflow-x: hidden;
+}
+
+*,
+:after,
+:before {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+}
+
+:root {
+  --white-color: #fff;
+  --header-distance: 0;
+  --elm-undefined: #e5e7eb;
+  --elm-bug: #9dc130;
+  --elm-dark: #5f606d;
+  --elm-dragon: #0773c7;
+  --elm-electric: #edd53f;
+  --elm-fairy: #ef97e6;
+  --elm-fighting: #d94256;
+  --elm-fire: #fc6c6d;
+  --elm-flying: #9bb4e8;
+  --elm-ghost: #7975d4;
+  --elm-grass: #5dbe62;
+  --elm-ground: #d78555;
+  --elm-ice: #98d8d8;
+  --elm-normal: #9a9da1;
+  --elm-poison: #b563ce;
+  --elm-psychic: #f85888;
+  --elm-rock: #cec18c;
+  --elm-steel: #b8b8d0;
+  --elm-water: #60a5fa;
+}
+
+@layer components {
+  /* In your CSS file */
+  .header {
+    @apply sticky top-0 z-20 transform bg-white;
+  }
+
+  .pokemon-card {
+    @apply relative grid cursor-pointer grid-cols-[auto,1fr,128px] grid-rows-[auto,auto,1fr,auto] overflow-hidden rounded-[0.375rem] text-white/90 bg-[var(--elm-undefined)] py-4 px-4 text-[0.875rem] leading-[1.25rem] top-0 z-20 transform bg-white;
+  }
+
+  .pokeball-flat {
+    position: absolute;
+    right: 3rem;
+    bottom: 1rem;
+    z-index: 0;
+    --tw-rotate: 12deg;
+    --tw-scale-x: 1.25;
+    --tw-scale-y: 1.25;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .pokeball-flat:before {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75px, 0 75px);
+    clip-path: polygon(0 0, 100% 0, 100% 75px, 0 75px);
+  }
+  .pokeball-flat:after {
+    -webkit-clip-path: polygon(0 85px, 100% 85px, 100% 100%, 0 100%);
+    clip-path: polygon(0 85px, 100% 85px, 100% 100%, 0 100%);
+  }
+
+  .pokeball-flat:after,
+  .pokeball-flat:before {
+    content: "";
+    position: absolute;
+    left: -120px;
+    top: -100px;
+    display: block;
+    height: 160px;
+    width: 160px;
+    border-radius: 9999px;
+    border-width: 40px;
+    border-color: hsla(0, 0%, 100%, 0.1);
+  }
+
+  .pokemon-detail-main-card {
+    position: relative;
+    margin: -2rem -0.875rem -3.5rem;
+    padding: 1.5rem 0.875rem 6rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    /* @apply  */
+  }
+
+  .h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+  }
+
+  #_pokemon-detail-base-props {
+    border-radius: 0.375rem;
+    background-color: hsla(0, 0%, 100%, 0.6);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    --tw-text-opacity: 1;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+  }
+}
