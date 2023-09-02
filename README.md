@@ -20,6 +20,17 @@ Built with ❤️🔥 by Vincent
 =======
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+### Performance Analyze
+#### Main Page
+I assume performance impacted because i dont fit intersection observer with screen, so it makes fetch bout 2 times bcs last card is visible in screen 
+Or i have to transform data to get image and url pokemon
+
+
+![image](https://github.com/vincentarck/pokedex/assets/73167671/36836c0f-14a6-42b3-9e41-975ca458fae2)
+
+### Pokemon Index
+![image](https://github.com/vincentarck/pokedex/assets/73167671/19978721-56a6-432e-8b1f-bf3f5e71c0b6)
+
 ## Getting Started
 
 First, run the development server:
