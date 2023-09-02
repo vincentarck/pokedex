@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { getBGPokemon } from "@/src/lib/utils";
+import { getBGPokemon, roundedStats } from "@/src/lib/utils";
 import {
   hasHomeSprite,
   getArtworkSprite,
@@ -57,6 +57,7 @@ export default function Content({ slug }: { slug: string }) {
         : "Liked This Pokemon"}{" "}
     </button>
   );
+  const {roundHeight, roundWeight} = roundedStats(pokemon.data.height, pokemon.data.weight)
   return (
     <section className="pokemon-detail-main-card" style={{ backgroundColor }}>
       <div className="absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 md:h-80 md:w-80" />
@@ -69,7 +70,7 @@ export default function Content({ slug }: { slug: string }) {
         <div className="bg-slate-700 min-w-[400px] lg:ml-5 lg:min-w-[450px] flex gap-8 flex-col py-6 px-5 rounded-md">
           {pokemon.data.stats?.map((item, idx) => (
             <ProgressBar
-              key={idx}
+              key={item.stat.name}
               bgColor={backgroundColor}
               completed={item.base_stat}
               desc={item.stat.name}
@@ -90,6 +91,7 @@ export default function Content({ slug }: { slug: string }) {
               <div className="flex justify-center gap-1.5 pb-1">
                 {data?.types?.map((type: Type) => (
                   <div
+                  key={type.type.name}
                     style={{
                       // @ts-ignore
                       backgroundColor: `var(--${getBGPokemon(type.type.name)})`,
@@ -100,7 +102,7 @@ export default function Content({ slug }: { slug: string }) {
               </div>
               <div>
                 {data?.types?.map((type: Type) => (
-                  <p className="font-medium capitalize">
+                  <p className="font-medium capitalize" key={type.slot}>
                     {data?.types?.length > 1
                       ? type.type.name + " / "
                       : type.type.name}
@@ -110,11 +112,11 @@ export default function Content({ slug }: { slug: string }) {
               <div className="text-gray-500">Type</div>
             </div>
             <div className="border-l border-slate-100 border-r px-7">
-              <div className="pb-0.5 text-xl font-bold">1 m</div>
+              <div className="pb-0.5 text-xl font-bold">{roundHeight} m</div>
               <div className="text-gray-500">Height</div>
             </div>
             <div>
-              <div className="pb-0.5 text-xl font-bold">13 kg</div>
+              <div className="pb-0.5 text-xl font-bold">{roundWeight} kg</div>
               <div className="text-gray-500">Weight</div>
             </div>
           </div>
