@@ -78,3 +78,11 @@ export const transformPokemonData = (res: {
     });
   });
 };
+
+
+export const roundedStats = (height:number, weight:number) => {
+  return {
+    roundHeight: Math.floor(height / 10),
+    roundWeight: Math.floor(weight / 10)
+  };
+};
