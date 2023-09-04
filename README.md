@@ -22,8 +22,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Performance Analyze
 #### Main Page
-I assume performance impacted because i dont fit intersection observer with screen, so it makes fetch bout 2 times bcs last card is visible in screen 
-Or i have to transform data to get image and url pokemon
+I assume performance impacted because i dont fit intersection observer with screen, so it makes fetch bout 2 times bcs despite chrome explicitly tell its correlated with chrome extension issues
 
 
 ![image](https://github.com/vincentarck/pokedex/assets/73167671/36836c0f-14a6-42b3-9e41-975ca458fae2)
