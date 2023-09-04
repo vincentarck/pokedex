@@ -22,7 +22,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Performance Analyze
 #### Main Page
-I assume performance impacted because i dont fit intersection observer with screen, so it makes fetch bout 2 times bcs despite chrome explicitly tell its correlated with chrome extension issues
+I assume performance impacted because something called [Garbage collection](https://web.dev/monitor-total-page-memory-usage/) despite chrome explicitly tell its correlated with chrome extension issues ( it's only give additional +2 scores when i opened in icognito though )
 
 
 ![image](https://github.com/vincentarck/pokedex/assets/73167671/36836c0f-14a6-42b3-9e41-975ca458fae2)
